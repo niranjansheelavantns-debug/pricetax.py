@@ -12,9 +12,15 @@ else:
     # Calculate average
     average = sum(scores) / len(scores)
 
+    # Determine maximum and minimum
+    maximum = max(scores)
+    minimum = min(scores)
+
     # Display results
     print("Scores:", scores)
     print("Average:", average)
+    print("Maximum:", maximum)
+    print("Minimum:", minimum)
 
     # Simple pass/fail check
     if average >= 50:
