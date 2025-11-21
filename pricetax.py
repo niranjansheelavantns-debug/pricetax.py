@@ -1,25 +1,28 @@
 import sys
 
-# Check correct number of arguments
-if len(sys.argv) != 3:
-    print("Usage: python pricetax.py <price_of_product> <tax_percentage>")
-    sys.exit()
 
-# Read values from command line
+if len(sys.argv) != 3:
+    print("Usage: python pricetax.py <product_price> <tax_percentage>")
+    sys.exit(1)
+
+
 productprice = float(sys.argv[1])
 producttax = float(sys.argv[2])
 
-# Validate product price
+
 if productprice <= 0:
-    print("Enter valid product price")
-    sys.exit()
+    print("Product price must be greater than 0")
+    sys.exit(1)
+elif producttax < 0:
+    print("Tax percentage must be greater than or equal to 0")
+    sys.exit(1)
+else:
+  
+    taxamount = (productprice * producttax) / 100
+    totalamount = productprice + taxamount
 
-# Calculate tax and total amount
-taxamount = (productprice * producttax) / 100
-totalamount = productprice + taxamount
-
-# Print results
-print("Product Price =", productprice)
-print("Product Tax % =", producttax)
-print("Tax Amount =", taxamount)
-print("Total Product Price =", totalamount)
+   
+    print("Product Price =", productprice)
+    print("Product Tax % =", producttax)
+    print("Tax Amount =", taxamount)
+    print("Total Product Price =", totalamount)
