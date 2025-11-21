@@ -2,15 +2,15 @@ import sys
 if len(sys.argv)!=3:
     print("usage:python pricetax.py <priceofproduct><taxofproduct>")
     sys.exit()
-    priceofproduct=float(sys.argv[1])
-    taxofproduct=float(sys.argv[2])
+    productprice=float(sys.argv[1])
+    producttax=float(sys.argv[2])
 
-if priceofproduct<=0:
+if productprice<=0:
     print("enter orignal price of product")
 
 else:
-    totalamount=100*taxofproduct+priceofproduct
+    totalamount=100*producttax+productprice
 
-print("Product Price=",priceofproduct)
-print("Product Tax %=",taxofproduct)
+print("Product Price=",productprice)
+print("Product Tax %=",producttax)
 print("Total Product Price=",totalamount)
